@@ -1,53 +1,21 @@
 import React, { Component } from 'react';
+import './App.css';
 
-class App extends Component {
-  state = {
-    count: 0
-  };
 
-  countUp = () => {
-    this.setState({
-      count: this.state.count + 1
-    });
-  };
-
-  resetbtn = () => {
-    this.setState({
-      count: 0
-    });
-  };
-
-  render() {
-    return (
-      <div className="App">
-        <div className="props">
-          <span>{this.props.message}</span>
-        </div>
-
-        <div>{this.state.count}</div>
-        <button onClick={this.countUp}>Do you wanna count up?</button>
-        <button onClick={this.resetbtn}>Reset</button>
-      
-        <div className="inside-app-props">
-          <InsideApp
-            count={this.state.count}
-            countUp={this.countUp}
-          />
-        </div>
-      </div>
-    );
+function App() {
+  let posts = '강남 고기 맛집';
+  function revise() {
+    return 100
   }
-}
 
-class InsideApp extends Component {
-  render() {
-    return (
-      <div>
-        {this.props.count}
-        <button onClick={this.props.countUp}>Click Me!</button>
+  return (
+    <div className="App">
+      <div className="black-nav">
+        <div style={ {color: 'blue', fontSize: '30px'}}>개발 Blog</div>
       </div>
-    );
-  }
+      <h4>{posts}</h4>
+    </div>
+  );
 }
-
+ 
 export default App;
